@@ -10,10 +10,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       TagId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Tags",
+          key: 'id'
+        }
       },
       PostId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Posts",
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

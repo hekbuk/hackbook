@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firsName: {
+      firstName: {
         type: Sequelize.STRING
       },
       lastName: {
@@ -22,7 +22,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       Username: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true,
+        references: {
+          model: "Users",
+          key: 'username'
+        }
       },
       createdAt: {
         allowNull: false,
