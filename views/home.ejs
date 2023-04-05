@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <%- include('partials/style.ejs') %>
 </head>
 <body>
-    home
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        
+        
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+            <% art.forEach(l=> { %>
+              <div class="col">
+                <div class="card">
+                  <img src="<%= l.photo %>" class="card-img-top" >
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <%= l.name %>
+                    </h5>
+                    <p class="card-text text-truncate">
+                      <%= l.description %>
+                    </p>
+                    <a href="/arts/<%= l.id %>" class="btn btn-primary">See Detail</a>
+                    <a href="/arts/<%= l.id %>/delete" class="btn btn-danger">Delete</a>
+                  </div>
+                </div>
+              </div>
+              <% }); %>
+          </div>
+    </div>
 </body>
 </html>
