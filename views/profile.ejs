@@ -13,7 +13,20 @@
     <%- include('partials/navbar.ejs') %>
 
     <div class="container">
-        <h1>coba</h1>
+        <h1>Profile</h1>
+        <br>
+        <table>
+            <tr>
+                <td>Username</td>
+                <td>:</td>
+                <td><%= data.username %></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><%= data.email %></td>
+            </tr>
+        </table>
     </div>
 </body>
 

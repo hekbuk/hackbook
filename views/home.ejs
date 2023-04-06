@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <%- include('partials/style.ejs') %>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <%- include('partials/style.ejs') %>
 </head>
+
 <body>
-    <%- include('partials/navbar.ejs') %>
+  <%- include('partials/navbar.ejs') %>
     <div class="container">
-        
-        
-        <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
-            <% art.forEach(l=> { %>
-              <div class="col">
-                <div class="card">
-                  <img src="<%= l.photo %>" class="card-img-top" >
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      <%= l.name %>
-                    </h5>
-                    <p class="card-text text-truncate">
-                      <%= l.description %>
-                    </p>
-                    <a href="/arts/<%= l.id %>" class="btn btn-primary">See Detail</a>
-                    <a href="/arts/<%= l.id %>/delete" class="btn btn-danger">Delete</a>
-                  </div>
-                </div>
+
+      <!-- card  -->
+      <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+        <% data.forEach(l=> { %>
+          <div class="col">
+            <div class="card">
+              <img src="<%= l.imgUrl %>" class="card-img-top" >
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= l.title %>
+                </h5>
+                <p class="card-text text-truncate">
+                  <%= formatedPublish(l.createdAt) %>
+                </p>
+                <hr>
+                <p class="card-text text-truncate">
+                  <%= l.content %>
+                </p>
+                <a href="#" class="btn btn-primary">like</a>
               </div>
-              <% }); %>
+            </div>
           </div>
+          <% }); %>
+      </div>
     </div>
 </body>
+
 </html>

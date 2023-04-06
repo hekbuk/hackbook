@@ -14,7 +14,7 @@ module.exports = {
         "title": "ini post",
         "content": "lorem",
         "imgUrl": "-",
-        "userId": 1,
+        "userId": 3,
         "createdAt": new Date(),
         "updatedAt": new Date()
     },
@@ -30,7 +30,7 @@ module.exports = {
         "title": "kalo ini iya juga",
         "content": "dolor",
         "imgUrl": "-",
-        "userId": 3,
+        "userId": 1,
         "createdAt": new Date(),
         "updatedAt": new Date()
     }
